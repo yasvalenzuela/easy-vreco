@@ -9,25 +9,62 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/2d8d0b9d/bpp/bpp.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <!-- Logo titulos y subtitulos -->
-    <header>
-        <p class="idioma">Idioma español(Español)</p>
-    </header>
-    
 
-    <!--Información Principal -->
-   <section>
-       <!--<button onclick="findMe()">Mostrar Ubicación</button> -->
-        
-        <div id="mapa"></div>
-   </section>
+<!--Información Principal -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-lg-2">
+          <button type="button" class="btn btn-warning" id="btnEncuentrame">Encuentrame</button>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <p id="pOrigen">Origen</p>
+          <input class="form-control" id="origen" type="text" placeholder="Introduce una ubicación" autocomplete="on">
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <p id="pDestino">Destino</p>
+          <input class="form-control" id="destino" type="text" placeholder="Introduce una ubicación">
+        </div>
+        <div class="col-md-1 col-lg-1">
+          <button type="button" id="btnRuta" class="btn btn-warning">Ruta</button>
+        </div>
+      </div>
+<!--
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3330.2334712310835!2d-70.63918500000001!3d-33.417156999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5ec018cfaf1%3A0xa317e52fa2f38ab9!2sAv.+Per%C3%BA+1308%2C+Recoleta%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1517953970957" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+  -->
+    </div>
+  </section>
+  <section>
+  <!--<button onclick="findMe()">Mostrar Ubicación</button> -->
+    <div id="mapa"></div>
+  </section>
 
- <!-- <script src="https://maps.googleapis.com/maps/apis/js?key=AIzaSyAp4D-p0xz-S9NDqx7bs60xwcnrtBktCjw"></script> -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v3"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-<script src="assets/js/app.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <script src="https://maps.googleapis.com/maps/apis/js?key=AIzaSyAp4D-p0xz-S9NDqx7bs60xwcnrtBktCjw"></script> -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v3"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="assets/js/app.js"></script>
+
 </body>
 </html>

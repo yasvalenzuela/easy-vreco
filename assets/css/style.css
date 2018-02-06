@@ -1,4 +1,4 @@
-/*
+
 #btnEncuentrame {
   margin-top: 45%;
 }
@@ -10,7 +10,6 @@
 .form-control {
   background:rgba(255, 255, 255, 0.3);
   /*width: 280px;*/
-/*
   margin-top: -4%;
   border: 1px solid #CED4DA;
   border-radius: 5px;
@@ -20,9 +19,10 @@
   margin-top: 108%;
 }
 
-*/
+
 #mapa{
-    width: 700px;
-    height: 500px;
+  width: 100%;
+  height: 500px;
+  margin-top: 2%;
 }
 
