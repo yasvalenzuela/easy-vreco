@@ -3,8 +3,7 @@
 <head>
     <title>Geolocalizacion</title>
      <meta charset="UTF-8">
-    <meta name="description" content="Ejemplo HTML5"/>
-    <meta name="keywords" content="HTML5, CSS3, javascript"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/2d8d0b9d/bpp/bpp.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -12,6 +11,7 @@
 
 <body>
 
+    
 <!--Información Principal -->
   <section>
     <div class="container">
@@ -41,9 +41,11 @@
     </div>
   </section>
   <section>
-  <!--<button onclick="findMe()">Mostrar Ubicación</button> -->
-    <div id="mapa"></div>
-  </section>
+       <!--<button onclick="findMe()">Mostrar Ubicación</button> -->
+      <!--<input id="pac-input" class="controls" type="text" placeholder="Escriba aquí">  -->
+        <div id="mapa"></div>
+
+   </section>
 
 
 
@@ -57,10 +59,14 @@
 
 
 
+  <!-- <script src="https://maps.googleapis.com/maps/apis/js?key=AIzaSyAp4D-p0xz-S9NDqx7bs60xwcnrtBktCjw"></script> <-->
+    <!--AIzaSyC2SzjOhP6fRe-nnexvCwEZ_oi6BjpewzY -->
 
-  <!-- <script src="https://maps.googleapis.com/maps/apis/js?key=AIzaSyAp4D-p0xz-S9NDqx7bs60xwcnrtBktCjw"></script> -->
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v3=AIzaSyD6zh6XEX7UDoJYX-Nmc3wQ4eH5Vm5g0qo&callback=initMap&libraries=places"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2SzjOhP6fRe-nnexvCwEZ_oi6BjpewzY&callback&libraries=places&callback=initMap">
+    </script>
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
