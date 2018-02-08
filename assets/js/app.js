@@ -9,18 +9,20 @@ function initMap() {
   streetViewControl: false
   });
 
+  var img = 'http://www.adktrailmap.com/webmap/images/biking.png';
   var markCoordenadas = new google.maps.Marker({
     position: coordenadas,
-    map: map
+    map: map,
+    icon: img
   });
 
 // se crea el evento de click, cuando haga click en encuentrame se ejecutara la funcion
-  var infoWindow = new google.maps.InfoWindow({map: map});
   var btnEncuentrame = document.getElementById('btnEncuentrame');
   btnEncuentrame.addEventListener('click', findMe);
 
 // funcion para mostrar mi ubicacion actual
   function findMe() {
+    var infoWindow = new google.maps.InfoWindow({map: map});
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
@@ -28,7 +30,7 @@ function initMap() {
           lng: position.coords.longitude
         };
         infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        infoWindow.setContent('Ubicación actual');
         map.setCenter(pos);
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
@@ -39,11 +41,11 @@ function initMap() {
     }
   }
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-      }
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+      'Error: The Geolocation service failed.' :
+      'Error: Your browser doesn\'t support geolocation.');
+  }
 
 // con esto se realiza el autocompletado en los input
   var origen = document.getElementById('origen');
@@ -53,32 +55,42 @@ function initMap() {
   new google.maps.places.Autocomplete(destino);
 
 // marca la ruta aun no funciona
+
   var btnRuta = document.getElementById('btnRuta');
-  btnRuta.addEventListener('click', routes);
+  //btnRuta.addEventListener('click', trazarRuta);
+  var ds = new google.maps.DirectionsService;
+  var dr = new google.maps.DirectionsRenderer;
   
-  function routes(ds, dr) {
-    var origen = document.getElementById('origen').value;
-  var destino = document.getElementById('destino').value;
-    if(origen !== "" || destino !== "") {
-      ds.route({
-        origin: origen,
-        destination: destino,
-        travelMode: "DRIVING"
-      },
-      function(response, status) {
-        if (status === "OK") {
-          dr.setDirections(response);
-        } else {
-          window.alert('Directions request failed due to ' + status);
-        }
-      })
-    }
+  var calculateAndDisplayRoute = function(ds, dr) {
+    ds.route({
+      origin: origen.value,
+      destination: destino.value,
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if(status === 'OK') {
+        dr.setDirections(response);
+      } else {
+        window.alert('No encontramos una ruta');
+      }
+    });
   }
-  dr.setMap(map);
-   var trazarRuta = function(){
-      calcularRuta(ds,dr);
-  };
+dr.setMap(map);
+
+var trazarRuta = function(){
+  calculateAndDisplayRoute(ds, dr);
+    }
+
+    document.getElementById('btnRuta').addEventListener('click', trazarRuta);
+
+
+
 }
+
+
+
+
+
+
 
 
 
