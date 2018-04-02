@@ -4,6 +4,6 @@ Aplicación para saber exactamente tu ubicación actual y poder trazar tu ruta d
 
 ![geolocalizacion](https://user-images.githubusercontent.com/32285473/38064710-ecc1e7a4-32d5-11e8-9651-8ef66a0d7af0.png)
 
-# Desarrollado para 
+## Desarrollado para 
 
 ## [Laboratoria](http://laboratoria.la/)
